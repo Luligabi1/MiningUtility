@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "miningutility",
+  "version": "${version}",
+  "name": "MiningUtility",
+  "description": "dummy",
+  "authors": [
+    "Luligabi"
+  ],
+  "contact": {
+    "website": "dummy",
+    "repo": "dummy"
+  },
+  "license": "MIT",
+  "icon": "assets/MiningUtility/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.luligabi.miningutility.MiningUtilityClient"
+    ],
+    "main": [
+      "me.luligabi.miningutility.MiningUtility"
+    ]
+  },
+  "mixins": [
+    "MiningUtility.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
