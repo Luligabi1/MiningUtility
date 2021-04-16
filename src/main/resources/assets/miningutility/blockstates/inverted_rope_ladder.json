@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "miningutility:block/rope_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "miningutility:block/rope_ladder"
+    },
+    "facing=south": {
+      "model": "miningutility:block/rope_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "miningutility:block/rope_ladder",
+      "y": 270
+    }
+  }
+}
