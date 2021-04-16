@@ -1,5 +1,6 @@
 package me.luligabi.miningutility;
 
+import me.luligabi.miningutility.registry.BlockRegistry;
 import me.luligabi.miningutility.registry.ItemRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -18,8 +19,9 @@ public class MiningUtility implements ModInitializer {
     @Override
     public void onInitialize() {
         ItemRegistry.register();
+        BlockRegistry.register();
         // V WIP Blocks, items and colors.
-        CustomPortalApiRegistry.addPortal(Blocks.CHISELED_STONE_BRICKS, PortalIgnitionSource.ItemUseSource(Items.TORCH), new Identifier(MOD_ID, "mining_dimension"), 51, 52, 49);
+        CustomPortalApiRegistry.addPortal(Blocks.CHISELED_STONE_BRICKS, PortalIgnitionSource.ItemUseSource(Items.TORCH), new Identifier(MOD_ID, "void"), 51, 52, 49);
     }
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(
