@@ -8,6 +8,8 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 public class RopeLadderBlock extends LadderBlock {
 
     public RopeLadderBlock(Settings settings) {
@@ -19,10 +21,13 @@ public class RopeLadderBlock extends LadderBlock {
         if(!world.isClient()) {
             BlockPos currentBellowPos = pos.down();
             Block currentBellow = world.getBlockState(currentBellowPos).getBlock();
-            while(currentBellow == Blocks.AIR || currentBellow == Blocks.CAVE_AIR || currentBellow == Blocks.VOID_AIR) {
+            int ladderLimit = 48; //TODO: Add config to change value
+            Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
+            while(Arrays.asList(airBlockList).contains(currentBellow) && ladderLimit > 0) {
                 world.setBlockState(currentBellowPos, state);
                 currentBellowPos = currentBellowPos.subtract(new Vec3i(0, 1, 0));
                 currentBellow = world.getBlockState(currentBellowPos).getBlock();
+                ladderLimit--;
             }
         }
         super.onPlaced(world, pos, state, placer, itemStack);

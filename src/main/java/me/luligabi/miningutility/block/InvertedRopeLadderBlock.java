@@ -11,22 +11,26 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 public class InvertedRopeLadderBlock extends LadderBlock {
 
     public InvertedRopeLadderBlock(Settings settings) {
         super(Settings.copy(Blocks.LADDER));
     }
 
-    //TODO: Add check to avoid mindless placing of ladders, causing gigantic lag.
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         if(!world.isClient()) {
             BlockPos currentAbovePos = pos.up();
             Block currentAbove = world.getBlockState(currentAbovePos).getBlock();
-            while(currentAbove == Blocks.AIR || currentAbove == Blocks.CAVE_AIR || currentAbove == Blocks.VOID_AIR) {
+            int ladderLimit = 48; //TODO: Add config to change value
+            Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
+            while(Arrays.asList(airBlockList).contains(currentAbove) && ladderLimit > 0) {
                 world.setBlockState(currentAbovePos, state);
                 currentAbovePos = currentAbovePos.add(new Vec3i(0, 1, 0));
                 currentAbove = world.getBlockState(currentAbovePos).getBlock();
+                ladderLimit--;
             }
         }
         super.onPlaced(world, pos, state, placer, itemStack);

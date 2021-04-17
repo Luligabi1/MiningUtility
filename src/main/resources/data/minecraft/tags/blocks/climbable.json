@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "miningutility:rope_ladder"
+    "miningutility:rope_ladder",
+    "miningutility:inverted_rope_ladder"
   ]
 }
