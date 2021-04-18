@@ -1,0 +1,4 @@
+{
+  "message.miningutility.escape_rope.setteleport": "Set teleport coordinates to %d, %d, %d.",
+  "message.miningutility.escape_rope.fail": "Failed to teleport! Check tooltip to see how to set a teleport position."
+}
