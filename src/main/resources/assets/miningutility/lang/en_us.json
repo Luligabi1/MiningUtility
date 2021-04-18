@@ -1,4 +1,11 @@
 {
   "message.miningutility.escape_rope.setteleport": "Set teleport coordinates to %d, %d, %d.",
-  "message.miningutility.escape_rope.fail": "Failed to teleport! Check tooltip to see how to set a teleport position."
+  "message.miningutility.escape_rope.fail": "Failed to teleport! Check tooltip to see how to set a teleport position.",
+
+  "item.miningutility.escape_rope.tooltip.1.set": "Teleport position set to ",
+  "item.miningutility.escape_rope.tooltip.1.coordinates": "%d, %d, %d",
+  "item.miningutility.escape_rope.tooltip.1.unset": "Teleport position isn't set!",
+
+  "item.miningutility.escape_rope.tooltip.2": "Shift-Right Click to set the teleport position",
+  "item.miningutility.escape_rope.tooltip.3": "Right-Click to teleport to said teleport position."
 }
