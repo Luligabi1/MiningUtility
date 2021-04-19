@@ -18,11 +18,26 @@ dependencies {
 
     modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta28-1.16'
     include 'net.kyrptonaught:customportalapi:0.0.1-beta28-1.16'
+
+    modApi("com.github.GabrielOlvH:magna:${project.magna_version}") {
+        exclude group: "net.fabricmc.fabric-api", module: "fabric-api"
+        exclude group: "com.jamieswhiteshirt", module: "reach-entity-attributes"
+        exclude group: "io.github.prospector", "module": "modmenu"
+    }
+    include("com.github.GabrielOlvH:magna:${project.magna_version}") {
+        exclude group: "net.fabricmc.fabric-api", module: "fabric-api"
+        exclude group: "com.jamieswhiteshirt", module: "reach-entity-attributes"
+        exclude group: "io.github.prospector", "module": "modmenu"
+    }
 }
 
 repositories {
+    maven {url "https://dl.bintray.com/kyrptonaught/customportalapi"}
     maven {
-        url "https://dl.bintray.com/kyrptonaught/customportalapi"
+        url = "https://jitpack.io"
+        content {
+            includeGroup "com.github.GabrielOlvH"
+        }
     }
 }
 

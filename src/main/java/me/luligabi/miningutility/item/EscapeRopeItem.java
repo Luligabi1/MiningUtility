@@ -33,6 +33,7 @@ public class EscapeRopeItem extends Item {
         if(!player.isSneaking()) {
             CompoundTag itemCompoundTag = item.getTag();
 
+            //TODO: Add check to avoid teleporting on another dimension
             if(itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
                 player.teleport(itemCompoundTag.getDouble("x"),
                         itemCompoundTag.getDouble("y"),
