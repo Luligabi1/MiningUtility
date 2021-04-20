@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "miningutility:block/wall_mini_torch" },
+    "facing=south": { "model": "miningutility:block/wall_mini_torch", "y": 90 },
+    "facing=west": { "model": "miningutility:block/wall_mini_torch", "y": 180 },
+    "facing=north": { "model": "miningutility:block/wall_mini_torch", "y": 270 }
+  }
+}

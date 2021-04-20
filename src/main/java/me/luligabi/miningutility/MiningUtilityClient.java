@@ -14,5 +14,8 @@ public class MiningUtilityClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.ROPE_LADDER_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.INVERTED_ROPE_LADDER_BLOCK, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.MINI_TORCH_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.WALL_MINI_TORCH_BLOCK, RenderLayer.getCutout());
     }
 }
