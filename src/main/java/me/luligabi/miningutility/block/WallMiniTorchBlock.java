@@ -78,14 +78,22 @@ public class WallMiniTorchBlock extends MiniTorchBlock {
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         Direction direction = state.get(FACING);
-        double d = (double)pos.getX() + 0.5D;
-        double e = (double)pos.getY() + 0.4D;
-        double f = (double)pos.getZ() + 0.5D;
-        double g = 0.22D;
-        double h = 0.27D;
-        Direction direction2 = direction.getOpposite();
-        world.addParticle(ParticleTypes.SMOKE, d + 0.27D * (double)direction2.getOffsetX(), e + 0.22D, f + 0.27D * (double)direction2.getOffsetZ(), 0.0D, 0.0D, 0.0D);
-        world.addParticle(this.particle, d + 0.27D * (double)direction2.getOffsetX(), e + 0.22D, f + 0.27D * (double)direction2.getOffsetZ(), 0.0D, 0.0D, 0.0D);
+        double x = (double)pos.getX() + 0.5D;
+        double y = (double)pos.getY() + 0.35D;
+        double z = (double)pos.getZ() + 0.5D;
+        Direction directionOpposite = direction.getOpposite();
+        switch(direction) {
+            case NORTH:
+            case SOUTH:
+                world.addParticle(ParticleTypes.SMOKE, x + 0.27D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.37D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
+                world.addParticle(this.particle, x + 0.27D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.37D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
+                break;
+            case WEST:
+            case EAST:
+                world.addParticle(ParticleTypes.SMOKE, x + 0.37D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.27D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
+                world.addParticle(this.particle, x + 0.37D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.27D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
+                break;
+        }
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {

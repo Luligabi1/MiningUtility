@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "miningutility:item/tunnel_excavator"
+    "layer0": "miningutility:block/mini_torch"
   }
 }

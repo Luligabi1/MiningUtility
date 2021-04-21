@@ -42,10 +42,10 @@ public class MiniTorchBlock extends Block {
 
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        double d = (double)pos.getX() + 0.5D;
-        double e = (double)pos.getY() + 0.4D;
-        double f = (double)pos.getZ() + 0.5D;
-        world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0D, 0.0D, 0.0D);
-        world.addParticle(this.particle, d, e, f, 0.0D, 0.0D, 0.0D);
+        double x = (double)pos.getX() + 0.5D;
+        double y = (double)pos.getY() + 0.4D;
+        double z = (double)pos.getZ() + 0.5D;
+        world.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, 0.0D, 0.0D);
+        world.addParticle(this.particle, x, y, z, 0.0D, 0.0D, 0.0D);
     }
 }

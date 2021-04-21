@@ -30,8 +30,8 @@ public class BlockRegistry {
     public static final RopeLadderBlock ROPE_LADDER_BLOCK = new RopeLadderBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque());
     public static final InvertedRopeLadderBlock INVERTED_ROPE_LADDER_BLOCK = new InvertedRopeLadderBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque());
 
-    public static final MiniTorchBlock MINI_TORCH_BLOCK = new MiniTorchBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 10).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
-    public static final WallMiniTorchBlock WALL_MINI_TORCH_BLOCK = new WallMiniTorchBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 10).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+    public static final MiniTorchBlock MINI_TORCH_BLOCK = new MiniTorchBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+    public static final WallMiniTorchBlock WALL_MINI_TORCH_BLOCK = new WallMiniTorchBlock(Block.Settings.of(Material.SUPPORTED).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
 
 
 }
