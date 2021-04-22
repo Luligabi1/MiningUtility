@@ -4,6 +4,7 @@
   "package": "me.luligabi.miningutility.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "PlayerEntityMixin"
   ],
   "client": [
     "MinecraftClientMixin"

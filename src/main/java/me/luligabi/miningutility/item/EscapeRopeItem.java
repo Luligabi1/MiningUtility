@@ -28,33 +28,36 @@ public class EscapeRopeItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack item = player.getStackInHand(hand);
-        player.setCurrentHand(hand);
+        if(!world.isClient()) {
+            player.setCurrentHand(hand);
 
-        if(!player.isSneaking()) {
-            CompoundTag itemCompoundTag = item.getTag();
+            if (!player.isSneaking()) {
+                CompoundTag itemCompoundTag = item.getTag();
 
-            //TODO: Add check to avoid teleporting on another dimension
-            if(itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
-                player.teleport(itemCompoundTag.getDouble("x"),
-                        itemCompoundTag.getDouble("y"),
-                        itemCompoundTag.getDouble("z"));
-                item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
+                //TODO: Add check to avoid teleporting on another dimension
+                if (itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
+                    player.teleport(itemCompoundTag.getDouble("x"),
+                            itemCompoundTag.getDouble("y"),
+                            itemCompoundTag.getDouble("z"));
+                    item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
+                } else {
+                    player.sendMessage(new TranslatableText(
+                            "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
+                }
             } else {
-                player.sendMessage(new TranslatableText(
-                        "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
-            }
-        } else {
-            CompoundTag compoundTag = new CompoundTag();
-            compoundTag.putDouble("x", player.getX());
-            compoundTag.putDouble("y", player.getY());
-            compoundTag.putDouble("z", player.getZ());
+                CompoundTag compoundTag = new CompoundTag();
+                compoundTag.putDouble("x", player.getX());
+                compoundTag.putDouble("y", player.getY());
+                compoundTag.putDouble("z", player.getZ());
 
-            item.setTag(compoundTag);
-            player.sendMessage(new TranslatableText(
-                    "message.miningutility.escape_rope.setteleport", Utils.roundNumber(player.getX(), 1), Utils.roundNumber(player.getY(), 1), Utils.roundNumber(player.getZ(), 1))
-                    .setStyle(Style.EMPTY.withColor(Formatting.YELLOW)), true);
+                item.setTag(compoundTag);
+                player.sendMessage(new TranslatableText(
+                        "message.miningutility.escape_rope.setteleport", Utils.roundNumber(player.getX(), 1), Utils.roundNumber(player.getY(), 1), Utils.roundNumber(player.getZ(), 1))
+                        .setStyle(Style.EMPTY.withColor(Formatting.YELLOW)), true);
+            }
+            return TypedActionResult.success(item);
         }
-        return TypedActionResult.success(item);
+        return TypedActionResult.fail(item);
     }
 
     @Override

@@ -22,5 +22,5 @@ public class ItemRegistry {
     public static BlockItem MINI_TORCH = new WallStandingBlockItem(BlockRegistry.MINI_TORCH_BLOCK, BlockRegistry.WALL_MINI_TORCH_BLOCK, new FabricItemSettings().group(MiningUtility.ITEM_GROUP));
 
     public static final ArmorMaterial MINING_HELMET_ARMOR_MATERIAL = new MiningHelmetArmorMaterial();
-    public static final Item MINING_HELMET = new ArmorItem(MINING_HELMET_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(MiningUtility.ITEM_GROUP));
+    public static final Item MINING_HELMET = new ArmorItem(MINING_HELMET_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(MiningUtility.ITEM_GROUP).maxDamage(165));
 }
