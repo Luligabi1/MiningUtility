@@ -1,0 +1,28 @@
+{
+  "item.miningutility.escape_rope": "Corda de Escape",
+  "block.miningutility.mini_torch": "Mini Tocha",
+  "item.miningutility.mining_helmet": "Capacete de Mineração",
+  "block.miningutility.rope_ladder": "Escada de Corda",
+  "block.miningutility.inverted_rope_ladder": "Escada de Corda (Invertida)",
+
+  "message.miningutility.escape_rope.setteleport": "Coordenadas de teleporte definidas para %d, %d, %d.",
+  "message.miningutility.escape_rope.fail": "Falha ao teleportar! Cheque a descrição para ver como definir um teleporte.",
+  "message.miningutility.escape_rope.fail.other_dimension": "Falha ao teleportar! Não pode teleportar entre dimensões.",
+
+  "item.miningutility.escape_rope.tooltip.1.set": "Posição de teleporte definida para ",
+  "item.miningutility.escape_rope.tooltip.1.coordinates": "%d, %d, %d",
+  "item.miningutility.escape_rope.tooltip.1.unset": "Posição de teleporte não está definida!",
+
+  "item.miningutility.escape_rope.tooltip.2": "Shift-Clique Direito para definir a posição do teleporte.",
+  "item.miningutility.escape_rope.tooltip.3": "Clique-Direto para teleportar para a posição definida.",
+
+  "block.miningutility.rope_ladder.tooltip": "Escada de uso único que expande para baixo",
+  "block.miningutility.inverted_rope_ladder.tooltip": "Escada de uso único que expande para cima",
+
+  "block.miningutility.rope_ladders.common.tooltip": "até o limite configurado de blocos.",
+
+  "block.miningutility.mini_torch.tooltip" : "Irmãozinho da Tocha Grande <3",
+
+  "itemGroup.miningutility.item_group": "Mining Utility"
+
+}
