@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "YIY"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:torch"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_helmet"
+    }
+  },
+  "result": {
+    "item": "miningutility:mining_helmet",
+    "count": 1
+  }
+}

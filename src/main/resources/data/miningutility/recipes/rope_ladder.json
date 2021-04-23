@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "/L/",
+    "SLS",
+    "/L/"
+  ],
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "L": {
+      "item": "minecraft:ladder"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "miningutility:rope_ladder",
+    "count": 4
+  }
+}

@@ -30,7 +30,7 @@ public class EscapeRopeItem extends Item {
         ItemStack item = player.getStackInHand(hand);
         if(!world.isClient()) {
             player.setCurrentHand(hand);
-            
+
             if (!player.isSneaking()) {
                 CompoundTag itemCompoundTag = item.getTag();
 
