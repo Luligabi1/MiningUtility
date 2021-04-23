@@ -6,7 +6,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 public class MiningUtility implements ModInitializer {
@@ -21,6 +20,6 @@ public class MiningUtility implements ModInitializer {
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(
             new Identifier(MOD_ID, "item_group"))
-            .icon(() -> new ItemStack(Items.IRON_PICKAXE)) //TODO: Change ItemGroup's icon.
+            .icon(() -> new ItemStack(ItemRegistry.ESCAPE_ROPE_ITEM))
             .build();
 }
