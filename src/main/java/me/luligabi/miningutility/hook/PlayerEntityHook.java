@@ -11,7 +11,7 @@ public class PlayerEntityHook {
 
     public static void tick(PlayerEntity playerEntity, CallbackInfo info) {
 
-        StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20*20, 0);
+        StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 13*20, 0);
 
         if(playerEntity.getEquippedStack(EquipmentSlot.HEAD).getItem() == ItemRegistry.MINING_HELMET) {
             if(!playerEntity.hasStatusEffect(StatusEffects.NIGHT_VISION)) {
