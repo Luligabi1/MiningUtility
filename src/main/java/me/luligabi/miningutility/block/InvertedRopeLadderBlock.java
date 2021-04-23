@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.block;
 
+import me.luligabi.miningutility.MiningUtility;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -30,7 +31,7 @@ public class InvertedRopeLadderBlock extends LadderBlock {
         if(!world.isClient()) {
             BlockPos currentAbovePos = pos.up();
             Block currentAbove = world.getBlockState(currentAbovePos).getBlock();
-            int ladderLimit = 48; //TODO: Add config to change value
+            int ladderLimit = new MiningUtility().getConfig().getOrDefault("invertedRopeLadderBlockLimit", 64);
             Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
             while(Arrays.asList(airBlockList).contains(currentAbove) && ladderLimit > 0) {
                 world.setBlockState(currentAbovePos, state);

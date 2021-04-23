@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.block;
 
+import me.luligabi.miningutility.MiningUtility;
 import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
@@ -27,7 +28,7 @@ public class RopeLadderBlock extends LadderBlock {
         if(!world.isClient()) {
             BlockPos currentBellowPos = pos.down();
             Block currentBellow = world.getBlockState(currentBellowPos).getBlock();
-            int ladderLimit = 48; //TODO: Add config to change value
+            int ladderLimit = new MiningUtility().getConfig().getOrDefault("ropeLadderBlockLimit", 64);
             Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
             while(Arrays.asList(airBlockList).contains(currentBellow) && ladderLimit > 0) {
                 world.setBlockState(currentBellowPos, state);
