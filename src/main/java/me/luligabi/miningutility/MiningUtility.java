@@ -4,9 +4,6 @@ import me.luligabi.miningutility.registry.BlockRegistry;
 import me.luligabi.miningutility.registry.ItemRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
-import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -20,8 +17,6 @@ public class MiningUtility implements ModInitializer {
     public void onInitialize() {
         ItemRegistry.register();
         BlockRegistry.register();
-        // V WIP Blocks, items and colors.
-        CustomPortalApiRegistry.addPortal(Blocks.CHISELED_STONE_BRICKS, PortalIgnitionSource.ItemUseSource(Items.TORCH), new Identifier(MOD_ID, "void"), 51, 52, 49);
     }
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(
