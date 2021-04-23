@@ -30,16 +30,20 @@ public class EscapeRopeItem extends Item {
         ItemStack item = player.getStackInHand(hand);
         if(!world.isClient()) {
             player.setCurrentHand(hand);
-
+            
             if (!player.isSneaking()) {
                 CompoundTag itemCompoundTag = item.getTag();
 
-                //TODO: Add check to avoid teleporting on another dimension
                 if (itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
-                    player.teleport(itemCompoundTag.getDouble("x"),
-                            itemCompoundTag.getDouble("y"),
-                            itemCompoundTag.getDouble("z"));
-                    item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
+                    if(itemCompoundTag.getString("dimension").equals(world.getRegistryKey().toString())) {
+                        player.teleport(itemCompoundTag.getDouble("x"),
+                                itemCompoundTag.getDouble("y"),
+                                itemCompoundTag.getDouble("z"));
+                        item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
+                    } else {
+                        player.sendMessage(new TranslatableText(
+                                "message.miningutility.escape_rope.fail.other_dimension").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
+                    }
                 } else {
                     player.sendMessage(new TranslatableText(
                             "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
@@ -49,6 +53,7 @@ public class EscapeRopeItem extends Item {
                 compoundTag.putDouble("x", player.getX());
                 compoundTag.putDouble("y", player.getY());
                 compoundTag.putDouble("z", player.getZ());
+                compoundTag.putString("dimension", world.getRegistryKey().toString());
 
                 item.setTag(compoundTag);
                 player.sendMessage(new TranslatableText(
