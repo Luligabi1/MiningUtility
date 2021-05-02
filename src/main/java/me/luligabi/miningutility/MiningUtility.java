@@ -23,8 +23,7 @@ public class MiningUtility implements ModInitializer {
                 "# Expand block limit for the Inverted Rope Ladder. Bigger numbers might cause stutter on weaker PCs.\n" +
                 "invertedRopeLadderBlockLimit=64";
     }
-
-
+    
     @Override
     public void onInitialize() {
         ItemRegistry.register();
