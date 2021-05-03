@@ -2,28 +2,29 @@
   "schemaVersion": 1,
   "id": "miningutility",
   "version": "${version}",
-  "name": "MiningUtility",      
-  "description": "dummy",
+  "name": "Mining Utility",
+  "description": "Adds some utility items for mining",
   "authors": [
     "Luligabi"
   ],
   "contact": {
-    "website": "dummy",
-    "repo": "dummy"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mining-utility/",
+    "repo": "https://github.com/Luligabi1/MiningUtility/",
+    "issues": "https://github.com/Luligabi1/MiningUtility/issues"
   },
   "license": "MIT",
   "icon": "assets/MiningUtility/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "me.luligabi.miningutility.MiningUtilityClient"
-    ],
     "main": [
       "me.luligabi.miningutility.MiningUtility"
+    ],
+    "client": [
+      "me.luligabi.miningutility.MiningUtilityClient"
     ]
   },
   "mixins": [
-    "MiningUtility.mixins.json"
+    "miningutility.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.3",
