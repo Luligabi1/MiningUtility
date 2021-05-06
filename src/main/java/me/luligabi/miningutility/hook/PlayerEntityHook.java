@@ -5,22 +5,26 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import net.minecraft.item.ItemStack;
 
 public class PlayerEntityHook {
 
-    public static void tick(PlayerEntity playerEntity, CallbackInfo info) {
+    public static void tick(PlayerEntity playerEntity) {
 
-        StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 13*20, 0);
+        StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffects.NIGHT_VISION, 20*20, 0);
 
-        if(playerEntity.getEquippedStack(EquipmentSlot.HEAD).getItem() == ItemRegistry.MINING_HELMET) {
+        ItemStack helmet = playerEntity.getEquippedStack(EquipmentSlot.HEAD);
+
+        if(helmet.getItem() == ItemRegistry.MINING_HELMET) {
             if(!playerEntity.hasStatusEffect(StatusEffects.NIGHT_VISION)) {
                 playerEntity.addStatusEffect(nightVision);
             }
             if(playerEntity.getActiveStatusEffects().containsValue(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 11*20, 0))) {
                 playerEntity.addStatusEffect(nightVision);
+                if(playerEntity.getRandom().nextBoolean()) {
+                    helmet.damage(1, playerEntity, (entity) -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
+                }
             }
         }
-        info.cancel();
     }
 }

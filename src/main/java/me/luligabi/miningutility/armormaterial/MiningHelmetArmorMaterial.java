@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.armormaterial;
 
+import me.luligabi.miningutility.registry.ItemRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -29,9 +30,7 @@ public class MiningHelmetArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
-        return null;
-    }
+    public Ingredient getRepairIngredient() { return Ingredient.ofItems(ItemRegistry.MINING_HELMET); }
 
     @Override
     public String getName() {
