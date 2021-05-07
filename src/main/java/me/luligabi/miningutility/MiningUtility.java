@@ -21,7 +21,10 @@ public class MiningUtility implements ModInitializer {
                 "ropeLadderBlockLimit=64\n\n" +
 
                 "# Expand block limit for the Inverted Rope Ladder. Bigger numbers might cause stutter on weaker PCs.\n" +
-                "invertedRopeLadderBlockLimit=64";
+                "invertedRopeLadderBlockLimit=64\n\n" +
+
+                "# Whether the Mining Helmet should be slowly damaged while on use\n" +
+                "damageMiningHelmetOnUse=true";
     }
 
     @Override

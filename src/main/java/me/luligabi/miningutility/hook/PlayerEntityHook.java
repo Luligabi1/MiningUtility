@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.hook;
 
+import me.luligabi.miningutility.MiningUtility;
 import me.luligabi.miningutility.registry.ItemRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -21,8 +22,10 @@ public class PlayerEntityHook {
             }
             if(playerEntity.getActiveStatusEffects().containsValue(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 11*20, 0))) {
                 playerEntity.addStatusEffect(nightVision);
-                if(playerEntity.getRandom().nextBoolean()) {
-                    helmet.damage(1, playerEntity, (entity) -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
+                if(new MiningUtility().getConfig().getOrDefault("damageMiningHelmetOnUse", true)) {
+                    if (playerEntity.getRandom().nextBoolean()) {
+                        helmet.damage(1, playerEntity, (entity) -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
+                    }
                 }
             }
         }
