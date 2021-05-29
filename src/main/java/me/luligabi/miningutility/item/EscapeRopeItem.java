@@ -5,7 +5,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -32,7 +32,7 @@ public class EscapeRopeItem extends Item {
             player.setCurrentHand(hand);
 
             if (!player.isSneaking()) {
-                CompoundTag itemCompoundTag = item.getTag();
+                NbtCompound itemCompoundTag = item.getTag();
 
                 if (itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
                     if(itemCompoundTag.getString("dimension").equals(world.getRegistryKey().toString())) {
@@ -49,7 +49,7 @@ public class EscapeRopeItem extends Item {
                             "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                 }
             } else {
-                CompoundTag compoundTag = new CompoundTag();
+                NbtCompound compoundTag = new NbtCompound();
                 compoundTag.putDouble("x", player.getX());
                 compoundTag.putDouble("y", player.getY());
                 compoundTag.putDouble("z", player.getZ());

@@ -3,6 +3,7 @@ package me.luligabi.miningutility.armormaterial;
 import me.luligabi.miningutility.registry.ItemRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -30,7 +31,7 @@ public class MiningHelmetArmorMaterial implements ArmorMaterial {
     }
 
     @Override
-    public Ingredient getRepairIngredient() { return Ingredient.ofItems(ItemRegistry.MINING_HELMET); }
+    public Ingredient getRepairIngredient() { return Ingredient.ofItems(ItemRegistry.MINING_HELMET, Items.YELLOW_DYE); }
 
     @Override
     public String getName() {

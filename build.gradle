@@ -17,20 +17,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
-repositories {
-    maven { url "https://dl.bintray.com/kyrptonaught/customportalapi" }
-}
-
 processResources {
-    inputs.property "version", project.version
+    inputs.property "1.0", project.version
 
-    from(sourceSets.main.resources.srcDirs) {
-        include "fabric.mod.json"
+    filesMatching("fabric.mod.json") {
         expand "version": project.version
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude "fabric.mod.json"
     }
 }
 
