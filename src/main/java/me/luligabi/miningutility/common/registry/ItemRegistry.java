@@ -1,8 +1,8 @@
-package me.luligabi.miningutility.registry;
+package me.luligabi.miningutility.common.registry;
 
-import me.luligabi.miningutility.MiningUtility;
-import me.luligabi.miningutility.armormaterial.MiningHelmetArmorMaterial;
-import me.luligabi.miningutility.item.EscapeRopeItem;
+import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.armormaterial.MiningHelmetArmorMaterial;
+import me.luligabi.miningutility.common.item.EscapeRopeItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;

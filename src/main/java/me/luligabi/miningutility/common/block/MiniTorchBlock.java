@@ -1,4 +1,4 @@
-package me.luligabi.miningutility.block;
+package me.luligabi.miningutility.common.block;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

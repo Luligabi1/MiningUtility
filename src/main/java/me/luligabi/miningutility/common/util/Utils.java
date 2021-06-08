@@ -1,4 +1,4 @@
-package me.luligabi.miningutility.util;
+package me.luligabi.miningutility.common.util;
 
 public class Utils {
 

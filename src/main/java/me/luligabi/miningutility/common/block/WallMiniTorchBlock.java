@@ -1,4 +1,4 @@
-package me.luligabi.miningutility.block;
+package me.luligabi.miningutility.common.block;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
@@ -54,11 +54,8 @@ public class WallMiniTorchBlock extends MiniTorchBlock {
         WorldView worldView = ctx.getWorld();
         BlockPos blockPos = ctx.getBlockPos();
         Direction[] directions = ctx.getPlacementDirections();
-        Direction[] var6 = directions;
-        int var7 = directions.length;
 
-        for(int var8 = 0; var8 < var7; ++var8) {
-            Direction direction = var6[var8];
+        for (Direction direction : directions) {
             if (direction.getAxis().isHorizontal()) {
                 Direction direction2 = direction.getOpposite();
                 blockState = blockState.with(FACING, direction2);
@@ -82,17 +79,15 @@ public class WallMiniTorchBlock extends MiniTorchBlock {
         double y = (double)pos.getY() + 0.35D;
         double z = (double)pos.getZ() + 0.5D;
         Direction directionOpposite = direction.getOpposite();
-        switch(direction) {
-            case NORTH:
-            case SOUTH:
+        switch (direction) {
+            case NORTH, SOUTH -> {
                 world.addParticle(ParticleTypes.SMOKE, x + 0.27D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.37D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
                 world.addParticle(this.particle, x + 0.27D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.37D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
-                break;
-            case WEST:
-            case EAST:
+            }
+            case WEST, EAST -> {
                 world.addParticle(ParticleTypes.SMOKE, x + 0.37D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.27D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
                 world.addParticle(this.particle, x + 0.37D * (double) directionOpposite.getOffsetX(), y + 0.22D, z + 0.27D * (double) directionOpposite.getOffsetZ(), 0.0D, 0.0D, 0.0D);
-                break;
+            }
         }
     }
 

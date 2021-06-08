@@ -1,7 +1,7 @@
-package me.luligabi.miningutility.hook;
+package me.luligabi.miningutility.common.hook;
 
-import me.luligabi.miningutility.MiningUtility;
-import me.luligabi.miningutility.registry.ItemRegistry;
+import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.registry.ItemRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

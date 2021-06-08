@@ -1,6 +1,6 @@
-package me.luligabi.miningutility.block;
+package me.luligabi.miningutility.common.block;
 
-import me.luligabi.miningutility.MiningUtility;
+import me.luligabi.miningutility.common.MiningUtility;
 import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;

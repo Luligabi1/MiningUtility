@@ -1,6 +1,6 @@
-package me.luligabi.miningutility.armormaterial;
+package me.luligabi.miningutility.common.armormaterial;
 
-import me.luligabi.miningutility.registry.ItemRegistry;
+import me.luligabi.miningutility.common.registry.ItemRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;

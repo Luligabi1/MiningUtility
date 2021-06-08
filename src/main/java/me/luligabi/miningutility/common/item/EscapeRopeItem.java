@@ -1,6 +1,6 @@
-package me.luligabi.miningutility.item;
+package me.luligabi.miningutility.common.item;
 
-import me.luligabi.miningutility.util.Utils;
+import me.luligabi.miningutility.common.util.Utils;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

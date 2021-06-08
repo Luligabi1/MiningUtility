@@ -1,6 +1,6 @@
 package me.luligabi.miningutility;
 
-import me.luligabi.miningutility.registry.BlockRegistry;
+import me.luligabi.miningutility.common.registry.BlockRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

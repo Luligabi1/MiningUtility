@@ -1,10 +1,10 @@
-package me.luligabi.miningutility.registry;
+package me.luligabi.miningutility.common.registry;
 
-import me.luligabi.miningutility.MiningUtility;
-import me.luligabi.miningutility.block.InvertedRopeLadderBlock;
-import me.luligabi.miningutility.block.MiniTorchBlock;
-import me.luligabi.miningutility.block.RopeLadderBlock;
-import me.luligabi.miningutility.block.WallMiniTorchBlock;
+import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.block.InvertedRopeLadderBlock;
+import me.luligabi.miningutility.common.block.MiniTorchBlock;
+import me.luligabi.miningutility.common.block.RopeLadderBlock;
+import me.luligabi.miningutility.common.block.WallMiniTorchBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;

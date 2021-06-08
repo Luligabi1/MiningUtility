@@ -1,6 +1,6 @@
-package me.luligabi.miningutility.mixin;
+package me.luligabi.miningutility.common.mixin;
 
-import me.luligabi.miningutility.hook.PlayerEntityHook;
+import me.luligabi.miningutility.common.hook.PlayerEntityHook;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
