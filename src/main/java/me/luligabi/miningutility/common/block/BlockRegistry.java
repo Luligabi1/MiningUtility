@@ -1,4 +1,4 @@
-package me.luligabi.miningutility.common.registry;
+package me.luligabi.miningutility.common.block;
 
 import me.luligabi.miningutility.common.MiningUtility;
 import me.luligabi.miningutility.common.block.InvertedRopeLadderBlock;

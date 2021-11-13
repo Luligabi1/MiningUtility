@@ -1,7 +1,7 @@
 package me.luligabi.miningutility.common;
 
-import me.luligabi.miningutility.common.registry.BlockRegistry;
-import me.luligabi.miningutility.common.registry.ItemRegistry;
+import me.luligabi.miningutility.common.block.BlockRegistry;
+import me.luligabi.miningutility.common.item.ItemRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;

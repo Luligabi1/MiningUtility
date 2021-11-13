@@ -1,4 +1,4 @@
-package me.luligabi.miningutility.common.mixin;
+package me.luligabi.miningutility.mixin;
 
 import me.luligabi.miningutility.common.hook.PlayerEntityHook;
 import net.minecraft.entity.player.PlayerEntity;

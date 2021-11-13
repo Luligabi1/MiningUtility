@@ -32,7 +32,7 @@ public class EscapeRopeItem extends Item {
             player.setCurrentHand(hand);
 
             if (!player.isSneaking()) {
-                NbtCompound itemCompoundTag = item.getTag();
+                NbtCompound itemCompoundTag = item.getNbt();
 
                 if (itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
                     if(itemCompoundTag.getString("dimension").equals(world.getRegistryKey().toString())) {
@@ -55,7 +55,7 @@ public class EscapeRopeItem extends Item {
                 compoundTag.putDouble("z", player.getZ());
                 compoundTag.putString("dimension", world.getRegistryKey().toString());
 
-                item.setTag(compoundTag);
+                item.setNbt(compoundTag);
                 player.sendMessage(new TranslatableText(
                         "message.miningutility.escape_rope.setteleport", Utils.roundNumber(player.getX(), 1), Utils.roundNumber(player.getY(), 1), Utils.roundNumber(player.getZ(), 1))
                         .setStyle(Style.EMPTY.withColor(Formatting.YELLOW)), true);
@@ -67,9 +67,9 @@ public class EscapeRopeItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if(stack.getTag().getSize() >= 2) {
+        if(stack.getNbt().getSize() >= 2) {
             tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.1.set").formatted(Formatting.GRAY).append(new TranslatableText("item.miningutility.escape_rope.tooltip.1.coordinates",
-                    Utils.roundNumber(stack.getTag().getDouble("x"), 1), Utils.roundNumber(stack.getTag().getDouble("y"), 1), Utils.roundNumber(stack.getTag().getDouble("z"), 1)).formatted(Formatting.YELLOW)));
+                    Utils.roundNumber(stack.getNbt().getDouble("x"), 1), Utils.roundNumber(stack.getNbt().getDouble("y"), 1), Utils.roundNumber(stack.getNbt().getDouble("z"), 1)).formatted(Formatting.YELLOW)));
         } else {
             tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.1.unset").formatted(Formatting.GRAY));
         }
