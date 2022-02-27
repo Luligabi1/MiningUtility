@@ -13,7 +13,7 @@ public class PlayerEntityMixin {
     @Inject(method = "tick", at = @At("RETURN"), cancellable = true)
     public void injectTick(CallbackInfo info) {
         PlayerEntity playerEntity = ((PlayerEntity) (Object) this);
-        PlayerEntityHook.tick(playerEntity);
+        PlayerEntityHook.tick(playerEntity, 11*20);
         info.cancel();
     }
 }

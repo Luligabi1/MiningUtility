@@ -4,7 +4,8 @@
   "package": "me.luligabi.miningutility.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "StatusEffectInstanceAccessor"
   ],
   "client": [
   ],

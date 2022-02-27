@@ -15,16 +15,17 @@ public class MiningUtility implements ModInitializer {
     SimpleConfig config = SimpleConfig.of(MOD_ID).provider(this::provider).request();
 
     private String provider(String filename) {
-        return "# Mining Utility Configuration File\n\n" +
+        return """
+                # Mining Utility Configuration File
 
-                "# Expand block limit for the Rope Ladder. Bigger numbers might cause stutter on weaker PCs.\n" +
-                "ropeLadderBlockLimit=64\n\n" +
+                # Expand block limit for the Rope Ladder. Bigger numbers might cause stutter on weaker PCs.
+                ropeLadderBlockLimit=64
 
-                "# Expand block limit for the Inverted Rope Ladder. Bigger numbers might cause stutter on weaker PCs.\n" +
-                "invertedRopeLadderBlockLimit=64\n\n" +
+                # Expand block limit for the Inverted Rope Ladder. Bigger numbers might cause stutter on weaker PCs.
+                invertedRopeLadderBlockLimit=64
 
-                "# Whether the Mining Helmet should be slowly damaged while on use\n" +
-                "damageMiningHelmetOnUse=true";
+                # Whether the Mining Helmet should be slowly damaged while on use
+                damageMiningHelmetOnUse=true""";
     }
 
     @Override
