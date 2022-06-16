@@ -20,7 +20,7 @@
       "me.luligabi.miningutility.common.MiningUtility"
     ],
     "client": [
-      "me.luligabi.miningutility.MiningUtilityClient"
+      "me.luligabi.miningutility.client.MiningUtilityClient"
     ]
   },
   "mixins": [
