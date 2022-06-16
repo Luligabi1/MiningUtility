@@ -27,24 +27,21 @@ import java.util.Random;
 
 public class MiniTorchBlock extends Block {
 
-    protected static final VoxelShape BOUNDING_SHAPE = Block.createCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 10.0D, 10.0D);
-    protected final ParticleEffect particle;
-
-    public MiniTorchBlock(Settings settings, ParticleEffect particle) {
+    public MiniTorchBlock(Settings settings) {
         super(settings);
-        this.particle = particle;
     }
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return BOUNDING_SHAPE;
+
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        return sideCoversSmallSquare(world, pos.down(), Direction.UP);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         return direction == Direction.DOWN && !this.canPlaceAt(state, world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
 
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return sideCoversSmallSquare(world, pos.down(), Direction.UP);
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return BOUNDING_SHAPE;
     }
 
     @Environment(EnvType.CLIENT)
@@ -53,11 +50,13 @@ public class MiniTorchBlock extends Block {
         double y = (double)pos.getY() + 0.4D;
         double z = (double)pos.getZ() + 0.5D;
         world.addParticle(ParticleTypes.SMOKE, x, y, z, 0.0D, 0.0D, 0.0D);
-        world.addParticle(this.particle, x, y, z, 0.0D, 0.0D, 0.0D);
+        world.addParticle(ParticleTypes.FLAME, x, y, z, 0.0D, 0.0D, 0.0D);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         tooltip.add(new TranslatableText("block.miningutility.mini_torch.tooltip").formatted(Formatting.LIGHT_PURPLE));
     }
+
+    private static final VoxelShape BOUNDING_SHAPE = Block.createCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 10.0D, 10.0D);
 }
