@@ -10,9 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class MiningUtility implements ModInitializer {
 
-    public static final String MOD_ID = "miningutility";
-
-    SimpleConfig config = SimpleConfig.of(MOD_ID).provider(this::provider).request();
+    SimpleConfig config = SimpleConfig.of(MOD_ID).provider(this::provider).request(); // TODO: Change to Omega Config on 1.19 port
 
     private String provider(String filename) {
         return "# Mining Utility Configuration File\n\n" +
@@ -29,14 +27,20 @@ public class MiningUtility implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ItemRegistry.register();
-        BlockRegistry.register();
+        BlockRegistry.init();
+        ItemRegistry.init();
     }
 
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(
-            new Identifier(MOD_ID, "item_group"))
+            new Identifier(MiningUtility.MOD_ID, "item_group"))
             .icon(() -> new ItemStack(ItemRegistry.ESCAPE_ROPE_ITEM))
             .build();
+
+    public static final String MOD_ID = "miningutility";
+
+    public static Identifier modId(String identifier) {
+        return new Identifier(MOD_ID, identifier);
+    }
 
     public SimpleConfig getConfig() {
         return config;
