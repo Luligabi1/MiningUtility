@@ -1,0 +1,29 @@
+{
+  "item.miningutility.escape_rope": "탈출 로프",
+  "block.miningutility.mini_torch": "미니 횃불",
+  "block.miningutility.wall_mini_torch": "미니 횃불",
+  "item.miningutility.mining_helmet": "채굴 헬멧",
+  "block.miningutility.rope_ladder": "로프 사다리",
+  "block.miningutility.inverted_rope_ladder": "로프 사다리 (위로)",
+
+  "message.miningutility.escape_rope.setteleport": "순간이동 좌표가 %d, %d, %d로 설정됐습니다.",
+  "message.miningutility.escape_rope.fail": "순간이동에 실패했습니다! 순간이동 위치를 어떻게 설정하는지 툴팁을 확인하세요.",
+  "message.miningutility.escape_rope.fail.other_dimension": "순간이동에 실패했습니다! 차원간 순간이동은 할 수 없습니다.",
+
+  "item.miningutility.escape_rope.tooltip.1.set": "순간이동 위치 설정 : ",
+  "item.miningutility.escape_rope.tooltip.1.coordinates": "%d, %d, %d",
+  "item.miningutility.escape_rope.tooltip.1.unset": "순간이동 위치가 설정되지 않았습니다!",
+
+  "item.miningutility.escape_rope.tooltip.2": "순간이동 위치를 설정하려면 Shift+우클릭하세요.",
+  "item.miningutility.escape_rope.tooltip.3": "순간이동 위치를 출력하려면 우클릭하세요.",
+
+  "block.miningutility.rope_ladder.tooltip": "한 번 사용으로 아래로 사다리를 확장합니다.",
+  "block.miningutility.inverted_rope_ladder.tooltip": "한 번 사용으로 위로 사다리를 확장합니다.",
+
+  "block.miningutility.rope_ladders.common.tooltip": "설정된 블록 제한까지",
+
+  "block.miningutility.mini_torch.tooltip" : "큰 횃불의 동생입니다. <3",
+
+  "itemGroup.miningutility.item_group": "Mining Utility"
+
+}
