@@ -22,7 +22,7 @@ public class PlayerEntityHook {
 
             if(playerEntity.getActiveStatusEffects().get(StatusEffects.NIGHT_VISION) instanceof StatusEffectInstanceAccessor instance && instance.getDuration() == effectDuration) {
                 ((StatusEffectInstanceAccessor) playerEntity.getActiveStatusEffects().get(StatusEffects.NIGHT_VISION)).setDuration(effectDuration + 2*20);
-                if(new MiningUtility().getConfig().getOrDefault("damageMiningHelmetOnUse", true) && Math.random() < 0.25) {
+                if(MiningUtility.CONFIG.damageMiningHelmetOnUse && Math.random() < 0.25) {
                     helmet.damage(1, playerEntity, (entity) -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
                 }
             }

@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '1.0-SNAPSHOT'
     id "com.matthewprenger.cursegradle" version '1.4.0'
     id "com.modrinth.minotaur" version '2.3.1'
     id 'maven-publish'
@@ -11,7 +11,7 @@ group = project.maven_group
 
 def ENV = System.getenv()
 
-def RELEASE_NAME = "Mining Utility ${version}"
+def RELEASE_NAME = "${version}"
 def RELEASE_FILE = "${buildDir}/libs/${archivesBaseName}-${version}.jar"
 
 @SuppressWarnings('GrMethodMayBeStatic')
@@ -19,11 +19,23 @@ def getChangeLog() {
     return ""
 }
 
+repositories {
+    maven { url = "https://maven.isxander.dev/releases/" }
+    maven { url 'https://maven.terraformersmc.com/releases/' }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    include modImplementation("dev.isxander:yet-another-config-lib:${project.yacl_version}") {
+        transitive(false)
+    }
+
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+    modRuntimeOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {

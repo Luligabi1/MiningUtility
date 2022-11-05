@@ -25,8 +25,8 @@ public class BlockRegistry {
         Registry.register(Registry.ITEM, MiningUtility.modId("mini_torch"), new WallStandingBlockItem(MINI_TORCH_BLOCK, WALL_MINI_TORCH_BLOCK, new FabricItemSettings().group(MiningUtility.ITEM_GROUP)));
     }
 
-    public static final RopeLadderBlock ROPE_LADDER_BLOCK = new RopeLadderBlock(Block.Settings.of(Material.DECORATION).sounds(BlockSoundGroup.LADDER).nonOpaque());
-    public static final InvertedRopeLadderBlock INVERTED_ROPE_LADDER_BLOCK = new InvertedRopeLadderBlock(Block.Settings.of(Material.DECORATION).sounds(BlockSoundGroup.LADDER).nonOpaque());
+    public static final RopeLadderBlock ROPE_LADDER_BLOCK = new RopeLadderBlock();
+    public static final InvertedRopeLadderBlock INVERTED_ROPE_LADDER_BLOCK = new InvertedRopeLadderBlock();
 
     public static final MiniTorchBlock MINI_TORCH_BLOCK = new MiniTorchBlock(Block.Settings.of(Material.DECORATION).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD));
     public static final WallMiniTorchBlock WALL_MINI_TORCH_BLOCK = new WallMiniTorchBlock(Block.Settings.of(Material.DECORATION).sounds(BlockSoundGroup.LADDER).nonOpaque().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD));

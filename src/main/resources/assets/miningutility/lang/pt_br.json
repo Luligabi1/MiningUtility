@@ -24,6 +24,16 @@
 
   "block.miningutility.mini_torch.tooltip" : "Irmãozinho da Tocha Grande <3",
 
-  "itemGroup.miningutility.item_group": "Mining Utility"
+  "itemGroup.miningutility.item_group": "Mining Utility",
+
+
+  "configOption.coxinhautilities.ropeLadderBlockLimit": "Limite da Escada de Corda",
+  "configOption.coxinhautilities.ropeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda pode se extender para baixo",
+
+  "configOption.coxinhautilities.invertedRopeLadderBlockLimit": "Limite da Escada de Corda (Invertida)",
+  "configOption.coxinhautilities.invertedRopeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda (Invertida) pode se extender para cima",
+
+  "configOption.coxinhautilities.damageMiningHelmetOnUse": "Danificar Capacete de Mineração ao usar?",
+  "configOption.coxinhautilities.damageMiningHelmetOnUse.tooltip": "Lentamente danifica o Capacete de Mineração enquanto é usado"
 
 }

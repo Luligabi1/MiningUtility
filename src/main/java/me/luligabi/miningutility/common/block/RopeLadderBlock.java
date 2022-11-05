@@ -1,12 +1,12 @@
 package me.luligabi.miningutility.common.block;
 
 import me.luligabi.miningutility.common.MiningUtility;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
@@ -19,8 +19,8 @@ import java.util.List;
 
 public class RopeLadderBlock extends LadderBlock {
 
-    public RopeLadderBlock(Settings settings) {
-        super(AbstractBlock.Settings.copy(Blocks.LADDER));
+    public RopeLadderBlock() {
+        super(FabricBlockSettings.copy(Blocks.LADDER));
     }
 
     @Override
@@ -28,7 +28,7 @@ public class RopeLadderBlock extends LadderBlock {
         if(!world.isClient()) {
             BlockPos currentBellowPos = pos.down();
             Block currentBellow = world.getBlockState(currentBellowPos).getBlock();
-            int ladderLimit = new MiningUtility().getConfig().getOrDefault("ropeLadderBlockLimit", 64);
+            int ladderLimit = MiningUtility.CONFIG.ropeLadderBlockLimit;
             Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
             while(Arrays.asList(airBlockList).contains(currentBellow) && ladderLimit > 0) {
                 world.setBlockState(currentBellowPos, state);
@@ -42,7 +42,7 @@ public class RopeLadderBlock extends LadderBlock {
 
     @Override
     public void appendTooltip(ItemStack itemStack, BlockView world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("block.miningutility.rope_ladder.tooltip").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("block.miningutility.rope_ladders.common.tooltip").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("block.miningutility.rope_ladder.tooltip").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("block.miningutility.rope_ladders.common.tooltip").formatted(Formatting.GRAY));
     }
 }
