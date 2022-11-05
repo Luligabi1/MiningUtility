@@ -93,7 +93,7 @@ public class MiningUtility implements ModInitializer {
         LOGGER = LoggerFactory.getLogger("Mining Utility");
         GSON = new GsonBuilder().setPrettyPrinting().create();
 
-        CONFIG_FILE = new File(String.format("%s%selementalcreepers.json", FabricLoader.getInstance().getConfigDir(), File.separator));
+        CONFIG_FILE = new File(String.format("%s%s%s.json", FabricLoader.getInstance().getConfigDir(), File.separator, MOD_ID));
         CONFIG = createConfig();
     }
 }
