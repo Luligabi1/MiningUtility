@@ -23,7 +23,7 @@
       "me.luligabi.miningutility.client.MiningUtilityClient"
     ],
     "modmenu": [
-      "me.luligabi.miningutility.common.compat.modmenu.ConfigScreenEntrypoint"
+      "me.luligabi.miningutility.client.compat.modmenu.ConfigScreenEntrypoint"
     ]
   },
   "mixins": [
