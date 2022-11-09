@@ -6,10 +6,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -41,11 +39,11 @@ public class EscapeRopeItem extends Item {
                                 itemCompoundTag.getDouble("z"));
                         item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
                     } else {
-                        player.sendMessage(new TranslatableText(
+                        player.sendMessage(Text.translatable(
                                 "message.miningutility.escape_rope.fail.other_dimension").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                     }
                 } else {
-                    player.sendMessage(new TranslatableText(
+                    player.sendMessage(Text.translatable(
                             "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                 }
             } else {
@@ -56,7 +54,7 @@ public class EscapeRopeItem extends Item {
                 compoundTag.putString("dimension", world.getRegistryKey().toString());
 
                 item.setNbt(compoundTag);
-                player.sendMessage(new TranslatableText(
+                player.sendMessage(Text.translatable(
                         "message.miningutility.escape_rope.setteleport", Utils.roundNumber(player.getX(), 1), Utils.roundNumber(player.getY(), 1), Utils.roundNumber(player.getZ(), 1))
                         .setStyle(Style.EMPTY.withColor(Formatting.YELLOW)), true);
             }
@@ -68,14 +66,15 @@ public class EscapeRopeItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(stack.getNbt().getSize() >= 2) {
-            tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.1.set").formatted(Formatting.GRAY).append(new TranslatableText("item.miningutility.escape_rope.tooltip.1.coordinates",
+            tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.1.set").formatted(Formatting.GRAY).append(Text.translatable("item.miningutility.escape_rope.tooltip.1.coordinates",
                     Utils.roundNumber(stack.getNbt().getDouble("x"), 1), Utils.roundNumber(stack.getNbt().getDouble("y"), 1), Utils.roundNumber(stack.getNbt().getDouble("z"), 1)).formatted(Formatting.YELLOW)));
         } else {
-            tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.1.unset").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.1.unset").formatted(Formatting.GRAY));
         }
-        tooltip.add(new LiteralText(""));
+        tooltip.add(Text.empty());
 
-        tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.2").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("item.miningutility.escape_rope.tooltip.3").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.2").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.3").formatted(Formatting.GRAY));
     }
+
 }
