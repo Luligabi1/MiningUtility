@@ -14,5 +14,6 @@ public class PlayerEntityMixin {
     public void injectTick(CallbackInfo info) {
         PlayerEntity playerEntity = ((PlayerEntity) (Object) this);
         PlayerEntityHook.tick(playerEntity, 11*20);
+        info.cancel();
     }
 }
