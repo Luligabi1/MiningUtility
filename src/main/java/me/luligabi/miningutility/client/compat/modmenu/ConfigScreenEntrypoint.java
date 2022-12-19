@@ -7,7 +7,7 @@ import dev.isxander.yacl.api.Option;
 import dev.isxander.yacl.api.OptionGroup;
 import dev.isxander.yacl.api.YetAnotherConfigLib;
 import dev.isxander.yacl.gui.controllers.BooleanController;
-import dev.isxander.yacl.gui.controllers.slider.IntegerSliderController;
+import dev.isxander.yacl.gui.controllers.string.number.IntegerFieldController;
 import me.luligabi.miningutility.common.MiningUtility;
 import me.luligabi.miningutility.common.ModConfig;
 import net.minecraft.client.gui.screen.Screen;
@@ -34,7 +34,7 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                         () -> config.ropeLadderBlockLimit,
                         newValue -> config.ropeLadderBlockLimit = newValue
                 )
-                .controller((intOption) -> new IntegerSliderController(intOption, 2, 320, 2))
+                .controller((intOption) -> new IntegerFieldController(intOption, 2, 320))
                 .build();
 
         Option<Integer> invertedRopeLadderBlockLimit = Option.createBuilder(Integer.class)
@@ -45,7 +45,7 @@ public class ConfigScreenEntrypoint implements ModMenuApi {
                         () -> config.invertedRopeLadderBlockLimit,
                         newValue -> config.invertedRopeLadderBlockLimit = newValue
                 )
-                .controller((intOption) -> new IntegerSliderController(intOption, 2, 320, 2))
+                .controller((intOption) -> new IntegerFieldController(intOption, 2, 320))
                 .build();
 
         /*
