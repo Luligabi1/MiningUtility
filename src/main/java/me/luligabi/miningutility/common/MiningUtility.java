@@ -6,10 +6,11 @@ import com.google.gson.JsonParser;
 import me.luligabi.miningutility.common.block.BlockRegistry;
 import me.luligabi.miningutility.common.item.ItemRegistry;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,9 +73,16 @@ public class MiningUtility implements ModInitializer {
         }
     }
 
-    public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(
-                    new Identifier(MiningUtility.MOD_ID, "item_group"))
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier(MiningUtility.MOD_ID, "item_group"))
+            .displayName(Text.translatable("itemGroup.miningutility.item_group"))
             .icon(() -> new ItemStack(ItemRegistry.ESCAPE_ROPE_ITEM))
+            .entries((enabledFeatures, entries, operatorEnabled) -> {
+                entries.add(BlockRegistry.ROPE_LADDER_BLOCK);
+                entries.add(BlockRegistry.INVERTED_ROPE_LADDER_BLOCK);
+                entries.add(BlockRegistry.MINI_TORCH_BLOCK);
+                entries.add(ItemRegistry.ESCAPE_ROPE_ITEM);
+                entries.add(ItemRegistry.MINING_HELMET);
+            })
             .build();
 
     public static final String MOD_ID = "miningutility";
