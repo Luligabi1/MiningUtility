@@ -24,8 +24,8 @@ import java.util.Map;
 
 public class WallMiniTorchBlock extends MiniTorchBlock {
 
-    public WallMiniTorchBlock(Settings settings) {
-        super(settings);
+    public WallMiniTorchBlock() {
+        super();
         this.setDefaultState((this.stateManager.getDefaultState()).with(FACING, Direction.NORTH));
     }
 

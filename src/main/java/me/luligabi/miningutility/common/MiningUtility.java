@@ -10,6 +10,10 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -26,6 +30,18 @@ public class MiningUtility implements ModInitializer {
     public void onInitialize() {
         BlockRegistry.init();
         ItemRegistry.init();
+
+        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, FabricItemGroup.builder()
+                .displayName(Text.translatable("itemGroup.miningutility.item_group"))
+                .icon(() -> new ItemStack(ItemRegistry.ESCAPE_ROPE_ITEM))
+                .entries((ctx, entries) -> {
+                    entries.add(BlockRegistry.ROPE_LADDER_BLOCK);
+                    entries.add(BlockRegistry.INVERTED_ROPE_LADDER_BLOCK);
+                    entries.add(BlockRegistry.MINI_TORCH_BLOCK);
+                    entries.add(ItemRegistry.ESCAPE_ROPE_ITEM);
+                    entries.add(ItemRegistry.MINING_HELMET);
+                })
+        .build());
     }
 
 
@@ -73,17 +89,8 @@ public class MiningUtility implements ModInitializer {
         }
     }
 
-    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(new Identifier(MiningUtility.MOD_ID, "item_group"))
-            .displayName(Text.translatable("itemGroup.miningutility.item_group"))
-            .icon(() -> new ItemStack(ItemRegistry.ESCAPE_ROPE_ITEM))
-            .entries((enabledFeatures, entries, operatorEnabled) -> {
-                entries.add(BlockRegistry.ROPE_LADDER_BLOCK);
-                entries.add(BlockRegistry.INVERTED_ROPE_LADDER_BLOCK);
-                entries.add(BlockRegistry.MINI_TORCH_BLOCK);
-                entries.add(ItemRegistry.ESCAPE_ROPE_ITEM);
-                entries.add(ItemRegistry.MINING_HELMET);
-            })
-            .build();
+    @SuppressWarnings("unused")
+    public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MiningUtility.MOD_ID, "item_group"));
 
     public static final String MOD_ID = "miningutility";
 

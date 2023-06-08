@@ -1,7 +1,7 @@
 package me.luligabi.miningutility.common.armormaterial;
 
 import me.luligabi.miningutility.common.item.ItemRegistry;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -11,12 +11,12 @@ import net.minecraft.sound.SoundEvents;
 public class MiningHelmetArmorMaterial implements ArmorMaterial {
 
     @Override
-    public int getDurability(EquipmentSlot slot) {
+    public int getDurability(ArmorItem.Type type) {
         return 15;
     }
 
     @Override
-    public int getProtectionAmount(EquipmentSlot slot) {
+    public int getProtection(ArmorItem.Type type) {
         return 2;
     }
 
