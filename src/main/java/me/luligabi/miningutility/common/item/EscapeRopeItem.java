@@ -29,10 +29,10 @@ public class EscapeRopeItem extends Item {
         if(!world.isClient()) {
             player.setCurrentHand(hand);
 
-            if (!player.isSneaking()) {
+            if(!player.isSneaking()) {
                 NbtCompound itemCompoundTag = item.getNbt();
 
-                if (itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
+                if(itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
                     if(itemCompoundTag.getString("dimension").equals(world.getRegistryKey().toString())) {
                         player.teleport(itemCompoundTag.getDouble("x"),
                                 itemCompoundTag.getDouble("y"),
@@ -47,11 +47,12 @@ public class EscapeRopeItem extends Item {
                             "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                 }
             } else {
-                NbtCompound compoundTag = new NbtCompound();
+                NbtCompound compoundTag = item.getOrCreateNbt();
                 compoundTag.putDouble("x", player.getX());
                 compoundTag.putDouble("y", player.getY());
                 compoundTag.putDouble("z", player.getZ());
                 compoundTag.putString("dimension", world.getRegistryKey().toString());
+
 
                 item.setNbt(compoundTag);
                 player.sendMessage(Text.translatable(
