@@ -6,6 +6,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -25,19 +27,22 @@ public class EscapeRopeItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        ItemStack item = player.getStackInHand(hand);
+        ItemStack stack = player.getStackInHand(hand);
         if(!world.isClient()) {
             player.setCurrentHand(hand);
 
             if(!player.isSneaking()) {
-                NbtCompound itemCompoundTag = item.getNbt();
-
-                if(itemCompoundTag.getDouble("x") != 0 && itemCompoundTag.getDouble("y") != 0 && itemCompoundTag.getDouble("z") != 0) { //if coordinates are all zeros, the position wasn't set.
-                    if(itemCompoundTag.getString("dimension").equals(world.getRegistryKey().toString())) {
-                        player.teleport(itemCompoundTag.getDouble("x"),
-                                itemCompoundTag.getDouble("y"),
-                                itemCompoundTag.getDouble("z"));
-                        item.damage(1, player, (entity) -> player.sendToolBreakStatus(player.getActiveHand()));
+                NbtCompound nbt = stack.getNbt();
+                if(isPositionSet(nbt)) { //if coordinates are all zeros, the position wasn't set.
+                    if(nbt.getString("dimension").equals(world.getRegistryKey().toString())) {
+                        player.teleport(
+                            nbt.getDouble("x"),
+                            nbt.getDouble("y"),
+                            nbt.getDouble("z")
+                        );
+                        stack.damage(1, player, (entity) -> {
+                            player.sendToolBreakStatus(player.getActiveHand());
+                        });
                     } else {
                         player.sendMessage(Text.translatable(
                                 "message.miningutility.escape_rope.fail.other_dimension").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
@@ -47,27 +52,36 @@ public class EscapeRopeItem extends Item {
                             "message.miningutility.escape_rope.fail").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                 }
             } else {
-                NbtCompound compoundTag = item.getOrCreateNbt();
+                NbtCompound compoundTag = stack.getOrCreateNbt();
                 compoundTag.putDouble("x", player.getX());
                 compoundTag.putDouble("y", player.getY());
                 compoundTag.putDouble("z", player.getZ());
                 compoundTag.putString("dimension", world.getRegistryKey().toString());
 
 
-                item.setNbt(compoundTag);
-                player.sendMessage(Text.translatable(
-                        "message.miningutility.escape_rope.setteleport", Utils.roundNumber(player.getX(), 1), Utils.roundNumber(player.getY(), 1), Utils.roundNumber(player.getZ(), 1))
-                        .setStyle(Style.EMPTY.withColor(Formatting.YELLOW)), true);
+                stack.setNbt(compoundTag);
+                player.sendMessage(
+                    Text.translatable(
+                        "message.miningutility.escape_rope.setteleport",
+                            Utils.roundNumber(player.getX(), 1),
+                            Utils.roundNumber(player.getY(), 1),
+                            Utils.roundNumber(player.getZ(), 1)
+                    ).setStyle(Style.EMPTY.withColor(Formatting.YELLOW)),
+                    true
+                );
             }
-            return TypedActionResult.success(item);
+            return TypedActionResult.success(stack);
         }
-        return TypedActionResult.fail(item);
+        return TypedActionResult.fail(stack);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(stack.getNbt().getSize() >= 2) {
-            tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.1.set").formatted(Formatting.GRAY).append(Text.translatable("item.miningutility.escape_rope.tooltip.1.coordinates",
+            tooltip.add(
+                Text.translatable(
+                        "item.miningutility.escape_rope.tooltip.1.set").formatted(Formatting.GRAY)
+                        .append(Text.translatable("item.miningutility.escape_rope.tooltip.1.coordinates",
                     Utils.roundNumber(stack.getNbt().getDouble("x"), 1), Utils.roundNumber(stack.getNbt().getDouble("y"), 1), Utils.roundNumber(stack.getNbt().getDouble("z"), 1)).formatted(Formatting.YELLOW)));
         } else {
             tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.1.unset").formatted(Formatting.GRAY));
@@ -76,6 +90,12 @@ public class EscapeRopeItem extends Item {
 
         tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.2").formatted(Formatting.GRAY));
         tooltip.add(Text.translatable("item.miningutility.escape_rope.tooltip.3").formatted(Formatting.GRAY));
+    }
+
+    private boolean isPositionSet(NbtCompound nbt) {
+        if(nbt == null) return false;
+
+        return nbt.getDouble("x") != 0 && nbt.getDouble("y") != 0 && nbt.getDouble("z") != 0;
     }
 
 }
