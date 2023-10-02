@@ -1,6 +1,6 @@
 package me.luligabi.miningutility.common.armormaterial;
 
-import me.luligabi.miningutility.common.item.ItemRegistry;
+import me.luligabi.miningutility.common.registry.ItemRegistry;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
@@ -9,6 +9,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
 public class MiningHelmetArmorMaterial implements ArmorMaterial {
+    public static final MiningHelmetArmorMaterial INSTANCE = new MiningHelmetArmorMaterial();
 
     @Override
     public int getDurability(ArmorItem.Type type) {

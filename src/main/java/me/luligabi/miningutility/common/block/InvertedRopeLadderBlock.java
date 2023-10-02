@@ -1,6 +1,6 @@
 package me.luligabi.miningutility.common.block;
 
-import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.ModConfig;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -21,19 +21,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class InvertedRopeLadderBlock extends LadderBlock {
-
     public InvertedRopeLadderBlock() {
         super(FabricBlockSettings.copy(Blocks.LADDER));
     }
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        if(!world.isClient()) {
-            BlockPos currentAbovePos = pos.up();
-            Block currentAbove = world.getBlockState(currentAbovePos).getBlock();
-            int ladderLimit = MiningUtility.CONFIG.invertedRopeLadderBlockLimit;
-            Block[] airBlockList = {Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
-            while(Arrays.asList(airBlockList).contains(currentAbove) && ladderLimit > 0) {
+        if (!world.isClient()) {
+            var currentAbovePos = pos.up();
+            var currentAbove = world.getBlockState(currentAbovePos).getBlock();
+            var ladderLimit = ModConfig.invertedRopeLadderBlockLimit;
+            var airBlockList = new Block[]{Blocks.AIR, Blocks.CAVE_AIR, Blocks.VOID_AIR};
+            while (Arrays.asList(airBlockList).contains(currentAbove) && ladderLimit > 0) {
                 world.setBlockState(currentAbovePos, state);
                 currentAbovePos = currentAbovePos.add(new Vec3i(0, 1, 0));
                 currentAbove = world.getBlockState(currentAbovePos).getBlock();
