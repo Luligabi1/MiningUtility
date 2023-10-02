@@ -26,14 +26,15 @@
 
   "itemGroup.miningutility.item_group": "Mining Utility",
 
+  "miningutility.midnightconfig.title": "Mining Utility",
 
-  "configOption.coxinhautilities.ropeLadderBlockLimit": "Limite da Escada de Corda",
-  "configOption.coxinhautilities.ropeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda pode se extender para baixo",
+  "miningutility.midnightconfig.ropeLadderBlockLimit": "Limite da Escada de Corda",
+  "miningutility.midnightconfig.ropeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda pode se extender para baixo",
 
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit": "Limite da Escada de Corda (Invertida)",
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda (Invertida) pode se extender para cima",
+  "miningutility.midnightconfig.invertedRopeLadderBlockLimit": "Limite da Escada de Corda (Invertida)",
+  "miningutility.midnightconfig.invertedRopeLadderBlockLimit.tooltip": "Quantos blocos uma Escada de Corda (Invertida) pode se extender para cima",
 
-  "configOption.coxinhautilities.damageMiningHelmetOnUse": "Danificar Capacete de Mineração ao usar?",
-  "configOption.coxinhautilities.damageMiningHelmetOnUse.tooltip": "Lentamente danifica o Capacete de Mineração enquanto é usado"
+  "miningutility.midnightconfig.damageMiningHelmetOnUse": "Danificar Capacete de Mineração ao usar?",
+  "miningutility.midnightconfig.damageMiningHelmetOnUse.tooltip": "Lentamente danifica o Capacete de Mineração enquanto é usado"
 
 }

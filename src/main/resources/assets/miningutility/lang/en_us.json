@@ -26,14 +26,15 @@
 
   "itemGroup.miningutility.item_group": "Mining Utility",
 
+  "miningutility.midnightconfig.title": "Mining Utility",
 
-  "configOption.coxinhautilities.ropeLadderBlockLimit": "Rope Ladder's Block Limit",
-  "configOption.coxinhautilities.ropeLadderBlockLimit.tooltip": "How many blocks a Rope Ladder can extend downward",
+  "miningutility.midnightconfig.ropeLadderBlockLimit": "Rope Ladder's Block Limit",
+  "miningutility.midnightconfig.ropeLadderBlockLimit.tooltip": "How many blocks a Rope Ladder can extend downward",
 
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit": "Inverted Rope Ladder's Block Limit",
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit.tooltip": "How many blocks an Inverted Rope Ladder can extend upward",
+  "miningutility.midnightconfig.invertedRopeLadderBlockLimit": "Inverted Rope Ladder's Block Limit",
+  "miningutility.midnightconfig.invertedRopeLadderBlockLimit.tooltip": "How many blocks an Inverted Rope Ladder can extend upward",
 
-  "configOption.coxinhautilities.damageMiningHelmetOnUse": "Damage Mining Helmet on Use?",
-  "configOption.coxinhautilities.damageMiningHelmetOnUse.tooltip": "Slowly damage Mining Helmet while it's being used"
+  "miningutility.midnightconfig.damageMiningHelmetOnUse": "Damage Mining Helmet on Use?",
+  "miningutility.midnightconfig.damageMiningHelmetOnUse.tooltip": "Slowly damage Mining Helmet while it's being used"
 
 }
