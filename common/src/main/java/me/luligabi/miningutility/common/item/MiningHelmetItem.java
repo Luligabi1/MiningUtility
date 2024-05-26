@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.common.item;
 
+import me.luligabi.miningutility.common.MiningUtility;
 import me.luligabi.miningutility.common.item.misc.ArmorMaterialRegistry;
 import me.luligabi.miningutility.mixin.MobEffectInstanceAccessor;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.Level;
 public class MiningHelmetItem extends ArmorItem {
 
     public MiningHelmetItem() {
-        super(ArmorMaterialRegistry.MINING_HELMET, ArmorItem.Type.HELMET, new Item.Properties());
+        super(ArmorMaterialRegistry.MINING_HELMET, ArmorItem.Type.HELMET, new Item.Properties().arch$tab(MiningUtility.ITEM_GROUP));
     }
 
     @Override

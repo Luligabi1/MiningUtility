@@ -1,5 +1,6 @@
 package me.luligabi.miningutility.common.item;
 
+import me.luligabi.miningutility.common.MiningUtility;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -13,11 +14,11 @@ import net.minecraft.world.level.Level;
 public class EscapeRopeItem extends Item {
 
     public EscapeRopeItem() {
-        super(new Item.Properties().stacksTo(16));
+        super(new Item.Properties().stacksTo(16).arch$tab(MiningUtility.ITEM_GROUP));
     }
 
     protected EscapeRopeItem(Properties properties) {
-        super(properties);
+        super(properties.arch$tab(MiningUtility.ITEM_GROUP));
     }
 
     protected void use(Level level, Player player, ItemStack stack) {

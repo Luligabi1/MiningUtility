@@ -17,7 +17,7 @@ public class BlockRegistry {
     );
     public static final RegistrySupplier<Item> ROPE_LADDER_ITEM = MiningUtility.ITEMS.register(
         MiningUtility.id("rope_ladder"),
-        () -> new BlockItem(ROPE_LADDER.get(), new Item.Properties())
+        () -> new BlockItem(ROPE_LADDER.get(), new Item.Properties().arch$tab(MiningUtility.ITEM_GROUP))
     );
 
     public static final RegistrySupplier<RopeLadderBlock> INVERTED_ROPE_LADDER = MiningUtility.BLOCKS.register(
@@ -26,7 +26,7 @@ public class BlockRegistry {
     );
     public static final RegistrySupplier<Item> INVERTED_ROPE_LADDER_ITEM = MiningUtility.ITEMS.register(
         MiningUtility.id("inverted_rope_ladder"),
-        () -> new BlockItem(INVERTED_ROPE_LADDER.get(), new Item.Properties())
+        () -> new BlockItem(INVERTED_ROPE_LADDER.get(), new Item.Properties().arch$tab(MiningUtility.ITEM_GROUP))
     );
 
     public static final RegistrySupplier<MiniTorchBlock> MINI_TORCH = MiningUtility.BLOCKS.register(
@@ -39,7 +39,7 @@ public class BlockRegistry {
     );
     public static final RegistrySupplier<Item> MINI_TORCH_ITEM = MiningUtility.ITEMS.register(
         MiningUtility.id("mini_torch"),
-        () -> new StandingAndWallBlockItem(MINI_TORCH.get(), WALL_MINI_TORCH.get(), new Item.Properties(), Direction.UP)
+        () -> new StandingAndWallBlockItem(MINI_TORCH.get(), WALL_MINI_TORCH.get(), new Item.Properties().arch$tab(MiningUtility.ITEM_GROUP), Direction.UP)
     );
 
 
