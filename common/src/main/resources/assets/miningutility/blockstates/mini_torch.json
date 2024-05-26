@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "miningutility:block/mini_torch" }
+  }
+}

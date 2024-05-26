@@ -1,0 +1,9 @@
+{
+  "ender_escape_rope_teleport": {
+    "subtitle": "subtitles.miningutility.ender_escape_rope_teleport",
+    "sounds": [
+      "minecraft:mob/endermen/portal",
+      "minecraft:mob/endermen/portal2"
+    ]
+  }
+}

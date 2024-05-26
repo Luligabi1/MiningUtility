@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "miningutility"
+version = "${version}"
+displayName = "Mining Utility"
+authors = "Me!"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.miningutility]]
+modId = "neoforge"
+type = "required"
+versionRange = "[20.5,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.miningutility]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.20.5,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.miningutility]]
+modId = "architectury"
+type = "required"
+versionRange = "[12.1.2,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "miningutility.mixins.json"
