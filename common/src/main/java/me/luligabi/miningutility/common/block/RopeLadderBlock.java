@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,6 +21,12 @@ public class RopeLadderBlock extends LadderBlock {
 
     private final Direction direction;
     private final int blockLimit;
+
+
+    @Override
+    protected boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
+        return true;
+    }
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity livingEntity, ItemStack itemStack) {

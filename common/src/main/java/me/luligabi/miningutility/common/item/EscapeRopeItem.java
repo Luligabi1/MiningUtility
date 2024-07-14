@@ -29,7 +29,7 @@ public class EscapeRopeItem extends Item {
 
         if(pos.getY() != player.getOnPos().getY() && level.getBlockState(pos.above()).isAir() && level.getBlockState(pos.above(2)).isAir()) {
             // FIXME damage?
-            player.teleportToWithTicket(
+            player.teleportTo(
                 pos.getX() + 0.5,
                 pos.getY() + 1,
                 pos.getZ() + 0.5
@@ -58,7 +58,7 @@ public class EscapeRopeItem extends Item {
     }
 
     @Override
-    public int getUseDuration(ItemStack itemStack) { // Same as a bow
+    public int getUseDuration(ItemStack itemStack, LivingEntity livingEntity) { // Same as a bow
         return 72000;
     }
 

@@ -35,7 +35,7 @@ public class EnderEscapeRopeItem extends EscapeRopeItem {
             if(isPositionSet(stack)) {
                 if(isSetToSameDimension(stack, level)) {
                     BlockPos pos = stack.get(DataComponentRegistry.BLOCK_POS.get());
-                    player.teleportToWithTicket(pos.getX(), pos.getY(), pos.getZ());
+                    player.teleportTo(pos.getX(), pos.getY(), pos.getZ());
                     stack.consume(1, player);
                     level.playSound(
                         null,

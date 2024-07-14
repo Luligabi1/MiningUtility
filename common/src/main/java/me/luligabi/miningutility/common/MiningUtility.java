@@ -32,7 +32,7 @@ public final class MiningUtility {
     }
 
     public static ResourceLocation id(String id) {
-        return new ResourceLocation(MOD_ID, id);
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, id);
     }
 
     public static final String MOD_ID = "miningutility";
