@@ -11,6 +11,7 @@ import me.luligabi.miningutility.common.item.misc.ArmorMaterialRegistry;
 import me.luligabi.miningutility.common.item.misc.DataComponentRegistry;
 import me.luligabi.miningutility.common.item.ItemRegistry;
 import me.luligabi.miningutility.common.misc.SoundRegistry;
+import me.luligabi.miningutility.common.misc.TagRegistry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -29,6 +30,7 @@ public final class MiningUtility {
         BlockRegistry.init();
 
         SoundRegistry.init();
+
     }
 
     public static ResourceLocation id(String id) {

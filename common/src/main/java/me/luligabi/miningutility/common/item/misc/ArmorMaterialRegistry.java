@@ -2,8 +2,9 @@ package me.luligabi.miningutility.common.item.misc;
 
 import dev.architectury.registry.registries.RegistrySupplier;
 import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.misc.SoundRegistry;
+import me.luligabi.miningutility.common.misc.TagRegistry;
 import net.minecraft.Util;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -25,9 +26,9 @@ public class ArmorMaterialRegistry {
                 enumMap.put(ArmorItem.Type.BODY, 2);
             }),
             0,
-            SoundEvents.ARMOR_EQUIP_IRON, // FIXME
-            () -> Ingredient.EMPTY, // FIXME
-            List.of(new ArmorMaterial.Layer(MiningUtility.id("mining_helmet"))), // FIXME
+            SoundRegistry.MINING_HELMET_EQUIP,
+            () -> Ingredient.of(TagRegistry.COMMON_COAL_TORCHES),
+            List.of(new ArmorMaterial.Layer(MiningUtility.id("mining_helmet"))),
             0F,
             0F
         )

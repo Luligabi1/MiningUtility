@@ -11,6 +11,16 @@ public class SoundRegistry {
         () -> SoundEvent.createVariableRangeEvent(MiningUtility.id("ender_escape_rope_teleport"))
     );
 
+    public static final RegistrySupplier<SoundEvent> MINING_HELMET_EQUIP = MiningUtility.SOUND_EVENTS.register(
+        MiningUtility.id("mining_helmet_equip"),
+        () -> SoundEvent.createVariableRangeEvent(MiningUtility.id("mining_helmet_equip"))
+    );
+
+    public static final RegistrySupplier<SoundEvent> ROPE_LADDER_PLACE = MiningUtility.SOUND_EVENTS.register(
+        MiningUtility.id("rope_ladder_place"),
+        () -> SoundEvent.createVariableRangeEvent(MiningUtility.id("rope_ladder_place"))
+    );
+
     public static void init() {
         // NO-OP
     }

@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 public class MiningHelmetItem extends ArmorItem {
 
     public MiningHelmetItem() {
-        super(ArmorMaterialRegistry.MINING_HELMET, ArmorItem.Type.HELMET, new Item.Properties().arch$tab(MiningUtility.ITEM_GROUP));
+        super(ArmorMaterialRegistry.MINING_HELMET, ArmorItem.Type.HELMET, new Item.Properties().durability(165).arch$tab(MiningUtility.ITEM_GROUP));
     }
 
     @Override

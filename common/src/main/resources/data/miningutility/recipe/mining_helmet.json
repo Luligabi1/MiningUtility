@@ -6,10 +6,10 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:torch"
+      "tag": "c:torches/coal"
     },
     "Y": {
-      "item": "minecraft:yellow_dye"
+      "tag": "c:dyes/yellow"
     },
     "I": {
       "item": "minecraft:iron_helmet"

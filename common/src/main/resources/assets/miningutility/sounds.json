@@ -5,5 +5,25 @@
       "minecraft:mob/endermen/portal",
       "minecraft:mob/endermen/portal2"
     ]
+  },
+  "rope_ladder_place": {
+    "subtitle": "subtitles.miningutility.rope_ladder_place",
+    "sounds": [
+      "minecraft:dig/wood1",
+      "minecraft:dig/wood2",
+      "minecraft:dig/wood3",
+      "minecraft:dig/wood4"
+    ]
+  },
+  "mining_helmet_equip": {
+    "subtitle": "subtitles.miningutility.mining_helmet_equip",
+    "sounds": [
+      "item/armor/equip_iron1",
+      "item/armor/equip_iron2",
+      "item/armor/equip_iron3",
+      "item/armor/equip_iron4",
+      "item/armor/equip_iron5",
+      "item/armor/equip_iron6"
+    ]
   }
 }
