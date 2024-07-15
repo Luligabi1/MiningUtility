@@ -13,7 +13,7 @@ public class BlockRegistry {
 
     public static final RegistrySupplier<RopeLadderBlock> ROPE_LADDER = MiningUtility.BLOCKS.register(
         MiningUtility.id("rope_ladder"),
-        () -> new RopeLadderBlock(Direction.DOWN, 64)
+        () -> new RopeLadderBlock(Direction.DOWN, MiningUtility.CONFIG.ropeLadderBlockLimit)
     );
     public static final RegistrySupplier<Item> ROPE_LADDER_ITEM = MiningUtility.ITEMS.register(
         MiningUtility.id("rope_ladder"),
@@ -22,7 +22,7 @@ public class BlockRegistry {
 
     public static final RegistrySupplier<RopeLadderBlock> INVERTED_ROPE_LADDER = MiningUtility.BLOCKS.register(
         MiningUtility.id("inverted_rope_ladder"),
-        () -> new RopeLadderBlock(Direction.UP, 64)
+        () -> new RopeLadderBlock(Direction.UP,  MiningUtility.CONFIG.invertedRopeLadderBlockLimit)
     );
     public static final RegistrySupplier<Item> INVERTED_ROPE_LADDER_ITEM = MiningUtility.ITEMS.register(
         MiningUtility.id("inverted_rope_ladder"),

@@ -28,7 +28,7 @@ public class MiningHelmetItem extends ArmorItem {
             if(player.getActiveEffectsMap().get(MobEffects.NIGHT_VISION) instanceof MobEffectInstanceAccessor instance) {
                 if(instance.getDuration() > effectDuration - 2 * 20) return;
                 instance.setDuration(effectDuration + 2 * 20);
-                if(/*FIXME MiningUtility.CONFIG.damageMiningHelmetOnUse &&*/ Math.random() < 0.25) {
+                if(MiningUtility.CONFIG.damageMiningHelmetOnUse && Math.random() < 0.25) {
                     itemStack.hurtAndBreak(1, player, EquipmentSlot.HEAD);
                 }
             } else {

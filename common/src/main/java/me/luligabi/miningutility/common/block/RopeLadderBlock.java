@@ -1,7 +1,9 @@
 package me.luligabi.miningutility.common.block;
 
+import me.luligabi.miningutility.common.misc.SoundRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -19,8 +21,8 @@ public class RopeLadderBlock extends LadderBlock {
         this.blockLimit = blockLimit;
     }
 
-    private final Direction direction;
-    private final int blockLimit;
+    public final Direction direction;
+    public final int blockLimit;
 
 
     @Override
@@ -37,7 +39,7 @@ public class RopeLadderBlock extends LadderBlock {
             level.setBlockAndUpdate(currentPos, state);
             currentPos = currentPos.relative(direction);
             ladderLimit--;
-            // TODO sound?
+            level.playSound(null, currentPos, SoundRegistry.ROPE_LADDER_PLACE.get(), SoundSource.BLOCKS);
         }
     }
 }

@@ -21,6 +21,9 @@
     ],
     "client": [
       "me.luligabi.miningutility.fabric.client.MiningUtilityClientFabric"
+    ],
+    "modmenu": [
+      "me.luligabi.miningutility.fabric.client.ConfigScreenEntrypoint"
     ]
   },
   "mixins": [

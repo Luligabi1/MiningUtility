@@ -37,6 +37,7 @@ public final class MiningUtility {
 
     public static final String MOD_ID = "miningutility";
     public static final RegistrySupplier<CreativeModeTab> ITEM_GROUP;
+    public static final ModConfig CONFIG;
 
     public static final Registrar<Block> BLOCKS;
     public static final Registrar<Item> ITEMS;
@@ -62,6 +63,9 @@ public final class MiningUtility {
                 () -> new ItemStack(ItemRegistry.ESCAPE_ROPE.get())
             )
         );
+
+        ModConfig.HANDLER.load();
+        CONFIG = ModConfig.HANDLER.instance();
     }
 
 }

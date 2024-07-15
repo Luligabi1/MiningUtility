@@ -23,18 +23,25 @@
   "block.miningutility.rope_ladder.tooltip": "One-Use Ladder that expands downward",
   "block.miningutility.inverted_rope_ladder.tooltip": "One-Use Ladder that expands upward",
   "block.miningutility.rope_ladders.common.tooltip": "until the configured block limit.",
-
+  "subtitles.miningutility.rope_ladder_place": "Rope Ladder placed",
 
   "itemGroup.miningutility.item_group": "Mining Utility",
 
 
-  "configOption.coxinhautilities.ropeLadderBlockLimit": "Rope Ladder's Block Limit",
-  "configOption.coxinhautilities.ropeLadderBlockLimit.tooltip": "How many blocks a Rope Ladder can extend downward",
+  "yacl3.config.miningutility:config.category.rope_ladder": "Rope Ladders",
+  "yacl3.config.miningutility:config.category.rope_ladder.group.rope_ladder": "Rope Ladder",
+  "yacl3.config.miningutility:config.category.rope_ladder.group.inverted_rope_ladder": "Inverted Rope Ladder",
 
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit": "Inverted Rope Ladder's Block Limit",
-  "configOption.coxinhautilities.invertedRopeLadderBlockLimit.tooltip": "How many blocks an Inverted Rope Ladder can extend upward",
+  "yacl3.config.miningutility:config.ropeLadderBlockLimit": "Rope Ladder's Block Limit",
+  "yacl3.config.miningutility:config.ropeLadderBlockLimit.desc": "How far a Rope Ladder can extend downwards in blocks.",
 
-  "configOption.coxinhautilities.damageMiningHelmetOnUse": "Damage Mining Helmet on Use?",
-  "configOption.coxinhautilities.damageMiningHelmetOnUse.tooltip": "Slowly damage Mining Helmet while it's being used"
+  "yacl3.config.miningutility:config.invertedRopeLadderBlockLimit": "Inverted Rope Ladder's Block Limit",
+  "yacl3.config.miningutility:config.invertedRopeLadderBlockLimit.desc": "How far a Inverted Rope Ladder can extend upwards in blocks.",
 
+
+  "yacl3.config.miningutility:config.category.mining_helmet": "Mining Helmet",
+  "yacl3.config.miningutility:config.category.mining_helmet.group.mining_helmet": "Mining Helmet",
+
+  "yacl3.config.miningutility:config.damageMiningHelmetOnUse": "Damage Mining Helmet on use?",
+  "yacl3.config.miningutility:config.damageMiningHelmetOnUse.desc": "Whether Mining Helmets should wear down through use."
 }
