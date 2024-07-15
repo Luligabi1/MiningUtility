@@ -3,16 +3,17 @@
   "id": "miningutility",
   "version": "${version}",
   "name": "Mining Utility",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adds some utility items for mining",
   "authors": [
-    "Me!"
+    "Luligabi"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mining-utility/",
+    "repo": "https://github.com/Luligabi1/MiningUtility/",
+    "issues": "https://github.com/Luligabi1/MiningUtility/issues"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/miningutility/icon.png",
+  "license": "MIT",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -23,11 +24,12 @@
     ]
   },
   "mixins": [
-    "miningutility.mixins.json"
+    "miningutility-common.mixins.json"
   ],
   "depends": {
-    "architectury": ">=13.0.1",
+    "minecraft": ">=1.21",
+    "fabricloader": ">=0.11.3",
     "fabric-api": "*",
-    "minecraft": ">=1.21"
+    "architectury": ">=13.0.1"
   }
 }
