@@ -103,8 +103,8 @@ public class EnderEscapeRopeItem extends EscapeRopeItem {
         }
 
         tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("item.miningutility.ender_escape_rope.tooltip.2").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("item.miningutility.ender_escape_rope.tooltip.3").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("item.miningutility.ender_escape_rope.tooltip.2"));
+        tooltip.add(Component.translatable("item.miningutility.ender_escape_rope.tooltip.3"));
     }
 
 

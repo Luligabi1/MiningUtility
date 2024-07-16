@@ -1,4 +1,10 @@
 {
+  "escape_rope_throw": {
+    "subtitle": "subtitles.miningutility.escape_rope_throw",
+    "sounds": [
+      "miningutility:escape_rope_throw"
+    ]
+  },
   "ender_escape_rope_teleport": {
     "subtitle": "subtitles.miningutility.ender_escape_rope_teleport",
     "sounds": [

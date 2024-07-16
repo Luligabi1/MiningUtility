@@ -6,6 +6,11 @@ import net.minecraft.sounds.SoundEvent;
 
 public class SoundRegistry {
 
+    public static final RegistrySupplier<SoundEvent> ESCAPE_ROPE_THROW = MiningUtility.SOUND_EVENTS.register(
+        MiningUtility.id("escape_rope_throw"),
+        () -> SoundEvent.createVariableRangeEvent(MiningUtility.id("escape_rope_throw"))
+    );
+
     public static final RegistrySupplier<SoundEvent> ENDER_ESCAPE_ROPE_TELEPORT = MiningUtility.SOUND_EVENTS.register(
         MiningUtility.id("ender_escape_rope_teleport"),
         () -> SoundEvent.createVariableRangeEvent(MiningUtility.id("ender_escape_rope_teleport"))

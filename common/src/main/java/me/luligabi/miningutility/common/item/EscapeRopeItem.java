@@ -1,15 +1,22 @@
 package me.luligabi.miningutility.common.item;
 
 import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.misc.SoundRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public class EscapeRopeItem extends Item {
 
@@ -22,18 +29,16 @@ public class EscapeRopeItem extends Item {
     }
 
     protected void use(Level level, Player player, ItemStack stack) {
-        BlockPos pos = player.getOnPos();
+        BlockPos pos = player.getOnPos().above();
         while(!level.canSeeSky(pos) && pos.getY() < level.dimensionType().logicalHeight() - 2) {
             pos = pos.above();
         }
-
-        if(pos.getY() != player.getOnPos().getY() && level.getBlockState(pos.above()).isAir() && level.getBlockState(pos.above(2)).isAir()) {
-            // FIXME damage?
-            player.teleportTo(
-                pos.getX() + 0.5,
-                pos.getY() + 1,
-                pos.getZ() + 0.5
-            );
+        if(pos.getY() != player.getOnPos().above().getY() && level.getBlockState(pos.above()).isAir() && level.getBlockState(pos.above(2)).isAir()) {
+            player.teleportTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5);
+            stack.consume(1, player);
+            player.playNotifySound(SoundRegistry.ESCAPE_ROPE_THROW.get(), SoundSource.PLAYERS, 1F, 1F);
+        } else {
+            level.addParticle(ParticleTypes.SMOKE, player.getX(), player.getY(), player.getZ(), 0, 0, 0);
         }
     }
 
@@ -62,4 +67,8 @@ public class EscapeRopeItem extends Item {
         return 72000;
     }
 
+    @Override
+    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> text, TooltipFlag tooltipFlag) {
+        text.add(Component.translatable("item.miningutility.escape_rope.tooltip"));
+    }
 }
