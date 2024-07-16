@@ -55,7 +55,7 @@ public class EnderEscapeRopeItem extends EscapeRopeItem {
             } else {
                 player.displayClientMessage(
                     Component.translatable(
-                        "message.miningutility.ender_escape_rope.fail"
+                        "item.miningutility.ender_escape_rope.tooltip.1.unset"
                     ).withStyle(ChatFormatting.RED),
                     true
                 );

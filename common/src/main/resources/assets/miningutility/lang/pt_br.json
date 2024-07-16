@@ -1,0 +1,49 @@
+{
+  "item.miningutility.escape_rope": "Corda de Escape",
+  "item.miningutility.escape_rope.tooltip": "§7Segure o §eBotão-Direito §7para se teleportar para a superfície",
+  "subtitles.miningutility.escape_rope_throw": "Corda de Escape se laça",
+
+  "item.miningutility.ender_escape_rope": "Corda de Escape do Fim",
+  "item.miningutility.ender_escape_rope.tooltip.1.set": "Posição de teleporte definida para ",
+  "item.miningutility.ender_escape_rope.tooltip.1.coordinates": "[%d, %d, %d]",
+  "item.miningutility.ender_escape_rope.tooltip.1.unset": "A posição de teleporte não está definida!",
+  "item.miningutility.ender_escape_rope.tooltip.2": "§7Segure §eShift-Botão-Direito §7para definir a posição de teleporte",
+  "item.miningutility.ender_escape_rope.tooltip.3": "§7Segure §eBotão-Direito §7para se teleportar para a posição de teleporte.",
+  "message.miningutility.ender_escape_rope.setteleport": "Posição de teleporte definida para [%d, %d, %d]",
+  "message.miningutility.ender_escape_rope.fail.other_dimension": "Você não pode teleportar entre dimensões!",
+  "subtitles.miningutility.ender_escape_rope_teleport": "Corda de Escape do Fim teleporta",
+
+  "block.miningutility.mini_torch": "Mini Tocha",
+  "block.miningutility.wall_mini_torch": "Mini Tocha",
+  "block.miningutility.mini_torch.tooltip" : "A irmãzinha da Tocha Grande. <3",
+
+  "item.miningutility.mining_helmet": "Capacete de Mineração",
+  "subtitles.miningutility.mining_helmet_equip": "Mining Helmet clanks",
+
+  "block.miningutility.rope_ladder": "Escada de Cordas",
+  "block.miningutility.inverted_rope_ladder": "Escada de Cordas Invertida",
+  "block.miningutility.rope_ladder.tooltip": "Escada de uso único que expande para baixo",
+  "block.miningutility.inverted_rope_ladder.tooltip": "Escada de uso único que expande para cima",
+  "block.miningutility.rope_ladders.common.tooltip": "até o limite de blocos definido.",
+  "subtitles.miningutility.rope_ladder_place": "Escada de Cordas colocada",
+
+  "tag.item.c.torches.coal": "Tochas de carvão",
+
+
+  "yacl3.config.miningutility:config.category.rope_ladder": "Escadas de Corda",
+  "yacl3.config.miningutility:config.category.rope_ladder.group.rope_ladder": "Escada de Cordas",
+  "yacl3.config.miningutility:config.category.rope_ladder.group.inverted_rope_ladder": "Escada de Cordas Invertida",
+
+  "yacl3.config.miningutility:config.ropeLadderBlockLimit": "Limite de blocos da Escadas de Cordas",
+  "yacl3.config.miningutility:config.ropeLadderBlockLimit.desc": "Quão longe uma Escada de Cordas pode se extender para baixo em blocos.",
+
+  "yacl3.config.miningutility:config.invertedRopeLadderBlockLimit": "Limite de blocos da Escadas de Cordas Invertida",
+  "yacl3.config.miningutility:config.invertedRopeLadderBlockLimit.desc": "Quão longe uma Escada de Cordas Invertida pode se extender para cima em blocos.",
+
+
+  "yacl3.config.miningutility:config.category.mining_helmet": "Capacete de Mineração",
+  "yacl3.config.miningutility:config.category.mining_helmet.group.mining_helmet": "Capacete de Mineração",
+
+  "yacl3.config.miningutility:config.damageMiningHelmetOnUse": "Danificar Capacete de Mineração durante uso?",
+  "yacl3.config.miningutility:config.damageMiningHelmetOnUse.desc": "Determina se Capacetes de Mineração são gradualmente degastados durante o uso."
+}
