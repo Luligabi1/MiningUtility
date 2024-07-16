@@ -3,7 +3,7 @@
   "id": "miningutility",
   "version": "${version}",
   "name": "Mining Utility",
-  "description": "Adds some utility items for mining",
+  "description": "Utility items and blocks for mining and cave exploring",
   "authors": [
     "Luligabi"
   ],
@@ -33,6 +33,7 @@
     "minecraft": ">=1.21",
     "fabricloader": ">=0.11.3",
     "fabric-api": "*",
-    "architectury": ">=13.0.1"
+    "architectury": ">=13.0.1",
+    "yet_another_config_lib_v3": "*"
   }
 }
