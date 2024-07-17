@@ -1,7 +1,11 @@
 package me.luligabi.miningutility.neoforge.client;
 
+import dev.architectury.event.events.client.ClientLifecycleEvent;
+import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import me.luligabi.miningutility.client.MiningUtilityClient;
 import me.luligabi.miningutility.common.MiningUtility;
+import me.luligabi.miningutility.common.block.BlockRegistry;
+import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 
@@ -9,6 +13,8 @@ import net.neoforged.fml.common.Mod;
 public class MiningUtilityClientNeoforge {
 
     public MiningUtilityClientNeoforge() {
-        MiningUtilityClient.init();
+        ClientLifecycleEvent.CLIENT_SETUP.register(instance -> {
+            MiningUtilityClient.init();
+        });
     }
 }
